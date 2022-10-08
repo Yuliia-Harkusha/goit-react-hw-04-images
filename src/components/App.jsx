@@ -29,9 +29,7 @@ export const App = () => {
           return [...prevItems, ...data.hits];
         });
 
-        if (page < Math.ceil(data.total / 12)) {
-          setIsVisible(true);
-        }
+        setIsVisible(page < Math.ceil(data.total / 12));
       } catch (error) {
         setError(error);
       } finally {
